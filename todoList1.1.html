@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../npmDemo/node_modules/font-awesome/css/font-awesome.css'">
+    <link href="src/todolist.css" rel="stylesheet">
+    <title>ToDoList</title>
+</head>
+<body>
+<div class="content">
+    <div class="header">
+        <h2>ToDoList</h2>
+        <input id='todoInput' class="enter" type="text" placeholder="  添加ToDo" required onkeypress="if(event.keyCode==13) {sub.click();return false;}"/>
+        <input type="submit" value="提交" id="sub" >
+    </div>
+    <div class="desk">
+        <div class="run">
+            <div class="a">
+                <div class="caption">
+                    <h2 style="color: #000000">正在进行</h2>
+                </div>
+                <div class="count">
+                    <span class="qunty" id="q1">0</span>
+                </div>
+            </div>
+            <div class="task" id="task">
+            </div>
+        </div>
+        <div class="finish">
+            <div class="a">
+                <div class="caption">
+                    <h2 style="color: #000000">已经完成</h2>
+                </div>
+                <div class="count">
+                    <span class="qunty" id="q2">0</span>
+                </div>
+            </div>
+            <div class="taskl" id="taskl">
+            </div>
+        </div>
+    </div>
+    <script src="../npmDemo/node_modules/seajs/_site/dist/sea.js"></script>
+    <script type="text/javascript">
+        seajs.config({
+            // 别名配置
+            alias: {
+                'jquery': '../npmDemo/node_modules/jquery/dist/jquery.js',
+            },
+            charset: 'utf-8' // 文件编码
+        });
+            seajs.use('src/main');
+    </script>
+</body>
+</html>

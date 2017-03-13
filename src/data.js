@@ -1,10 +1,27 @@
 /**
  * Created by Administrator on 2017/3/7.
  */
-define (function (require,exports) {
+define (function (require,exports,module) {
     var $ = require('jquery');
-    exports.create = function (text) {
-        var htmlTempl = "<div class='arr'><input type='checkbox' class='inputtype r' id='selector' value="+text+"><span>"+text+"</span> <i class='fa fa-minus-circle d' aria-hidden='true' id='delete' data-value="+text+"></i></div>";
-        return htmlTempl;
+    module.exports = {
+        add:function (key,value) {
+            window.localStorage.setItem(key,value);
+        },
+        remove:function (key,value) {
+            Array.prototype.removeByValue = function(val) {
+                for(var i=0; i<this.length; i++) {
+                    if(this[i] == val) {
+                        this.splice(i, 1);
+                        break;
+                    }
+                }
+            }
+            var arr = window.localStorage.getItem(key).split(',');
+            arr.removeByValue(value);
+            window.localStorage.setItem(key,arr);
+        },
+        getData:function (key) {
+           return window.localStorage.getItem(key);
+        }
     }
 });

@@ -1,0 +1,29 @@
+{
+  "name": "ToDoList2",
+  "version": "1.0.0",
+  "description": "package.json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo"
+  ],
+  "author": "xijiale",
+  "license": "ISC",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.17.4",
+    "seajs": "^3.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/npm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/npm/npm/issues"
+  },
+  "homepage": "https://github.com/npm/npm#readme"
+}

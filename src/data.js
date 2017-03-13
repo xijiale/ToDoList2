@@ -18,10 +18,14 @@ define (function (require,exports,module) {
             }
             var arr = window.localStorage.getItem(key).split(',');
             arr.removeByValue(value);
+
             window.localStorage.setItem(key,arr);
         },
         getData:function (key) {
-           return window.localStorage.getItem(key);
-        }
+            if(window.localStorage.getItem(key))
+                return window.localStorage.getItem(key).split(',')
+            else
+                return [];
+        },
     }
 });
